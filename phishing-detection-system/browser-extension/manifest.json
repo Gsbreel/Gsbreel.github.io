@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "PhishGuard AI - Spam & Phishing Detector",
+  "version": "1.0.0",
+  "description": "Real-time detection of phishing emails, spam links, and malicious websites with integration to PhishGuard AI system",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PhishGuard AI - Check this page"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

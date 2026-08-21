@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishGuard AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">PhishGuard AI</div>
+            <div class="version">v1.0</div>
+        </div>
+
+        <!-- Status Section -->
+        <div class="status-section">
+            <div id="status" class="status-box loading">
+                <div class="spinner"></div>
+                <span id="statusText">Analyzing page...</span>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results-section" style="display: none;">
+            <div id="resultContent"></div>
+        </div>
+
+        <!-- Email Findings Section -->
+        <div id="emailFindingsSection" class="email-findings-section" style="display: none;">
+            <div class="findings-header">
+                <span>Email Scan Results</span>
+                <span id="emailCount" class="email-count">0</span>
+            </div>
+            <div id="emailFindingsList" class="email-findings-list"></div>
+        </div>
+
+        <!-- Link Findings Section -->
+        <div id="linkFindingsSection" class="email-findings-section" style="display: none;">
+            <div class="findings-header">
+                <span>Link Scan Results</span>
+                <span id="linkCount" class="email-count">0</span>
+            </div>
+            <div id="linkFindingsList" class="email-findings-list"></div>
+        </div>
+
+        <!-- Threats Found Section -->
+        <div id="threatsSection" class="threats-section" style="display: none;">
+            <h3 class="threats-title">⚠️ Threats Detected</h3>
+            <div id="threatsList" class="threats-list"></div>
+        </div>
+
+        <!-- URL Analysis Section -->
+        <div class="url-analysis-section">
+            <h3>Manual URL Check</h3>
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="urlInput" 
+                    placeholder="Enter URL or email..." 
+                    class="url-input"
+                >
+                <button id="analyzeBtn" class="analyze-btn">Check</button>
+            </div>
+            <div id="manualResult" class="manual-result"></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <button id="historyBtn" class="footer-btn">History</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

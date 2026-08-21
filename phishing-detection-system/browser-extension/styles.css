@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    width: 500px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.container {
+    background: #fff;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.version {
+    font-size: 11px;
+    opacity: 0.8;
+}
+
+/* Status Section */
+.status-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.status-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-box.loading {
+    background: #E3F2FD;
+    color: #1976D2;
+}
+
+.status-box.error {
+    background: #FFEBEE;
+    color: #D32F2F;
+}
+
+/* Spinner */
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0,0,0,0.1);
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Results Section */
+.results-section {
+    padding: 15px 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.result-card {
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    margin-bottom: 10px;
+}
+
+.result-card.safe {
+    background: #E8F5E9;
+    border-left-color: #4CAF50;
+    color: #2E7D32;
+}
+
+.result-card.medium {
+    background: #FFF3E0;
+    border-left-color: #FF9800;
+    color: #E65100;
+}
+
+.result-card.high {
+    background: #FFE0B2;
+    border-left-color: #FF5722;
+    color: #BF360C;
+}
+
+.result-card.critical {
+    background: #FFCDD2;
+    border-left-color: #F44336;
+    color: #C62828;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.risk-icon {
+    font-size: 20px;
+}
+
+.result-score,
+.result-classification {
+    font-size: 13px;
+    margin: 4px 0;
+    opacity: 0.9;
+}
+
+.result-explanation {
+    font-size: 12px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid currentColor;
+    opacity: 0.8;
+}
+
+.result-details {
+    font-size: 12px;
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
+.result-details ul {
+    margin: 5px 0 0 20px;
+    padding: 0;
+}
+
+.result-details li {
+    margin: 3px 0;
+}
+
+.result-small {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+/* Email Findings Section */
+.email-findings-section {
+    padding: 12px 20px;
+    border-top: 1px solid #e0e0e0;
+    background: #FAFAFA;
+}
+
+.findings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.email-count {
+    background: #667eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.email-findings-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.email-finding-item {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 8px;
+    transition: border-color 0.15s ease;
+}
+
+.email-finding-item:last-child {
+    margin-bottom: 0;
+}
+
+.email-finding-item:hover {
+    border-color: #667eea;
+}
+
+.email-finding-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.email-risk-badge {
+    display: inline-flex;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.email-risk-critical {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.email-risk-high {
+    background: #FFF7ED;
+    color: #EA580C;
+}
+
+.email-risk-medium {
+    background: #FEFCE8;
+    color: #CA8A04;
+}
+
+.email-risk-safe {
+    background: #F0FDF4;
+    color: #16A34A;
+}
+
+.email-domain {
+    font-weight: 600;
+    font-size: 12px;
+    color: #334155;
+    flex: 1;
+}
+
+.email-risk-score {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748B;
+}
+
+.email-finding-address {
+    font-size: 11px;
+    color: #94A3B8;
+    word-break: break-all;
+    margin: 2px 0;
+    font-family: monospace;
+}
+
+.spoof-badge {
+    display: inline-flex;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 600;
+    background: #FEF2F2;
+    color: #DC2626;
+    border: 1px solid #FECACA;
+    margin-top: 3px;
+}
+
+.email-finding-details {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid #F1F5F9;
+}
+
+.email-detail {
+    font-size: 11px;
+    color: #64748B;
+    line-height: 1.5;
+    margin: 2px 0;
+}
+
+.email-findings-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.email-findings-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.email-findings-list::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 2px;
+}
+
+/* Threats Section */
+.threats-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #D32F2F;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.threats-section {
+    padding: 0 20px 15px;
+}
+
+.threats-list {
+    background: #FFEBEE;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.threat-item {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.threat-item:last-child {
+    border-bottom: none;
+}
+
+.threat-url {
+    font-size: 12px;
+    font-weight: 500;
+    color: #C62828;
+    word-break: break-all;
+    margin-bottom: 4px;
+}
+
+.threat-reason {
+    font-size: 11px;
+    color: #B71C1C;
+    opacity: 0.8;
+}
+
+/* URL Analysis Section */
+.url-analysis-section {
+    padding: 15px 20px;
+    border-top: 1px solid #e0e0e0;
+    background: #FAFAFA;
+}
+
+.url-analysis-section h3 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.url-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #DDD;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+.url-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.analyze-btn {
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-2px);
+}
+
+.analyze-btn:active {
+    transform: translateY(0);
+}
+
+.manual-result {
+    font-size: 12px;
+}
+
+.error-message {
+    background: #FFEBEE;
+    color: #C62828;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    gap: 8px;
+    padding: 12px 20px;
+    border-top: 1px solid #e0e0e0;
+    background: #FAFAFA;
+}
+
+.footer-btn {
+    flex: 1;
+    padding: 10px;
+    background: white;
+    border: 1px solid #DDD;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.footer-btn:hover {
+    background: #E8E8E8;
+    border-color: #999;
+}
+
+.footer-btn:active {
+    background: #D8D8D8;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
