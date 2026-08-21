@@ -1,5 +1,4 @@
-[sg.html](https://github.com/user-attachments/files/31305907/sg.html)
-# Gsbreel.github.io<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
