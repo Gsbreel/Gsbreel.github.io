@@ -124,11 +124,20 @@
       padding-top: 80px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 70px;
-      align-items: center;
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, .7fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.hero-grid > div:first-child {
+  grid-column: 1;
+}
+
+.hero-grid > .terminal {
+  grid-column: 2;
+}
     }
 
     .terminal-label {
@@ -592,6 +601,14 @@
       .btn {
         width: 100%;
       }
+      .terminal {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  visibility: visible;
+  opacity: 1;
+}
+
     }
   </style>
 
@@ -1031,19 +1048,19 @@
 
         <!-- Replace these placeholders with your real details -->
 
-        <a class="contact-link" href="mailto:YOUR_EMAIL@example.com">
+        <a class="contact-link" href="mailto:samsongeorge800@gmail.com">
           Email
         </a>
 
-        <a class="contact-link" href="https://github.com/YOUR_USERNAME" target="_blank">
+        <a class="contact-link" href="https://github.com/Gsbreel" target="_blank">
           GitHub
         </a>
 
-        <a class="contact-link" href="https://linkedin.com/in/YOUR_USERNAME" target="_blank">
+        <a class="contact-link" href="https://linkedin.com/in/sam123" target="_blank">
           LinkedIn
         </a>
 
-        <a class="contact-link" href="tel:+255000000000">
+        <a class="contact-link" href="tel:+255614385526">
           Phone
         </a>
 
